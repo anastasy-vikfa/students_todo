@@ -1,4 +1,6 @@
 # tudu
+ 
+Практиканты Anastasiya and Viktoria
 
 Разработчики Виктория и Анастасия
 
