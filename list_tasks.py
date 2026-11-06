@@ -2,7 +2,7 @@
 import os
 
 
-def print_todo_list(show_all=True):
+def list_tasks(show_all=True):
     file_name = "ToDo.txt"
     if not os.path.exists(file_name) or os.path.getsize(file_name) == 0:
         print("Список задач пуст.")

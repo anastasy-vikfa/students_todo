@@ -1,4 +1,4 @@
-def save_task(items_list):
+def add_task(items_list):
     task = " ".join(items_list)
     print("task = " + task)
     with open("todo.txt", "a", encoding="utf-8") as f:

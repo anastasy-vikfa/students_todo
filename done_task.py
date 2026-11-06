@@ -1,4 +1,4 @@
-def demadem(item):
+def done_task(item):
     num = int(item) - 1  # Получаем индекс строки (компьютер считает с 0)
     
     with open("todo.txt", "r", encoding="utf-8") as f:

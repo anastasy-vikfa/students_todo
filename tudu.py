@@ -1,7 +1,7 @@
 import sys
-from show_tasks import print_todo_list
-from input_tasks import save_task
-from done import demadem
+from list_tasks import list_tasks
+from add_task import add_task
+from done_task import done_task
 
 print("sys.argv: ",sys.argv)
 
@@ -14,14 +14,14 @@ command = sys.argv[1].lower()
 
 # --- ДОБАВИТЬ ЗАДАЧУ ---
 if command == "add":
-    save_task(sys.argv[2:])
+    add_task(sys.argv[2:])
 
 # --- ПОКАЗАТЬ СПИСОК ---
 if command == "list":
-    print_todo_list()
+    list_tasks()
 
 # --- ВЫПОЛНИТЬ ПО НОМЕРУ ---
 if command == "done":
-    demadem(sys.argv[2])
+    done_task(sys.argv[2])
     
 
