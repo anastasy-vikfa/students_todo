@@ -7,7 +7,7 @@ print("sys.argv: ",sys.argv)
 
 # Проверяем, что нам передали команду
 if len(sys.argv) < 2:
-    print("Используйте: add, list или done")
+    print("Используйте: add, list, listdone или done")
     sys.exit()
 
 command = sys.argv[1].lower()
@@ -16,9 +16,16 @@ command = sys.argv[1].lower()
 if command == "add":
     add_task(sys.argv[2:])
 
-# --- ПОКАЗАТЬ СПИСОК ---
+# --- ПОКАЗАТЬ СПИСОК С ВЫПОЛНЕННЫМИ---
+if command == "listdone":
+    show_all = True
+    list_tasks(show_all)
+
+# --- ПОКАЗАТЬ СПИСОК БЕЗ ВЫПОЛНЕННЫХ---
 if command == "list":
-    list_tasks()
+    show_all = False
+    list_tasks(show_all)
+
 
 # --- ВЫПОЛНИТЬ ПО НОМЕРУ ---
 if command == "done":
