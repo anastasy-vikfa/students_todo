@@ -1,27 +1,34 @@
 import sys
-from show_tasks import print_todo_list
-from input_tasks import save_task
-from done import demadem
+from list_tasks import list_tasks
+from add_task import add_task
+from done_task import done_task
 
 print("sys.argv: ",sys.argv)
 
 # Проверяем, что нам передали команду
 if len(sys.argv) < 2:
-    print("Используйте: add, list или done")
+    print("Используйте: add, list, listdone или done")
     sys.exit()
 
 command = sys.argv[1].lower()
 
 # --- ДОБАВИТЬ ЗАДАЧУ ---
 if command == "add":
-    save_task(sys.argv[2:])
+    add_task(sys.argv[2:])
 
-# --- ПОКАЗАТЬ СПИСОК ---
+# --- ПОКАЗАТЬ СПИСОК С ВЫПОЛНЕННЫМИ---
+if command == "listdone":
+    show_all = True
+    list_tasks(show_all)
+
+# --- ПОКАЗАТЬ СПИСОК БЕЗ ВЫПОЛНЕННЫХ---
 if command == "list":
-    print_todo_list()
+    show_all = False
+    list_tasks(show_all)
+
 
 # --- ВЫПОЛНИТЬ ПО НОМЕРУ ---
 if command == "done":
-    demadem(sys.argv[2])
+    done_task(sys.argv[2])
     
 
