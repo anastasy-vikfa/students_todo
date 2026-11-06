@@ -10,5 +10,3 @@ def print_todo_list():
         with open(file_name, "r", encoding="utf-8") as f:
             for number, line in enumerate(f, start=1):
                 print(f"{number}. {line.strip()}")
-            
-print_todo_list()
