@@ -29,6 +29,10 @@ if command == "list":
 
 # --- ВЫПОЛНИТЬ ПО НОМЕРУ ---
 if command == "done":
-    done_task(sys.argv[2])
+    if len(sys.argv) > 2:
+        done_task(sys.argv[2])
+    else:
+        done_task()
+
     
 
